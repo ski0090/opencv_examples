@@ -9,5 +9,17 @@ edition = "2021"
 opencv = {version = "0.63", features = ["highgui", "imgcodecs"]}
 
 [[bin]]
-name = "opencv_info"
-path = "src/opencv_info.rs"
+name = "info"
+path = "src/info.rs"
+
+[[bin]]
+name = "range"
+path = "src/range.rs"
+
+[[bin]]
+name = "copy_to"
+path = "src/copy_to.rs"
+
+[[bin]]
+name = "extract_mask"
+path = "src/extract_mask.rs"
