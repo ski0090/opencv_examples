@@ -6,7 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-opencv = {version = "0.63", features = ["highgui", "imgcodecs"]}
+opencv = {version = "0.63", features = ["highgui", "imgcodecs", "videoio"]}
 
 [[bin]]
 name = "info"
@@ -23,3 +23,11 @@ path = "src/copy_to.rs"
 [[bin]]
 name = "extract_mask"
 path = "src/extract_mask.rs"
+
+[[bin]]
+name = "canny"
+path = "src/canny.rs"
+
+[[bin]]
+name = "video_writer"
+path = "src/video_writer.rs"
