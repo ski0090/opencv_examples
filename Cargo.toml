@@ -9,6 +9,10 @@ edition = "2021"
 opencv = {version = "0.63", features = ["highgui", "imgcodecs", "videoio"]}
 
 [[bin]]
+name = "saturate"
+path = "src/saturate.rs"
+
+[[bin]]
 name = "info"
 path = "src/info.rs"
 
@@ -21,6 +25,10 @@ name = "copy_to"
 path = "src/copy_to.rs"
 
 [[bin]]
+name = "histogram_stretching"
+path = "src/histogram_stretching.rs"
+
+[[bin]]
 name = "extract_mask"
 path = "src/extract_mask.rs"
 
@@ -31,3 +39,4 @@ path = "src/canny.rs"
 [[bin]]
 name = "video_writer"
 path = "src/video_writer.rs"
+
