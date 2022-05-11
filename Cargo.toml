@@ -25,8 +25,12 @@ name = "copy_to"
 path = "src/copy_to.rs"
 
 [[bin]]
-name = "histogram_stretching"
-path = "src/histogram_stretching.rs"
+name = "histogram_eq"
+path = "src/histogram_eq.rs"
+
+[[bin]]
+name = "histogram_normalize"
+path = "src/histogram_normalize.rs"
 
 [[bin]]
 name = "extract_mask"
