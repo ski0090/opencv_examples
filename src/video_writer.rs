@@ -1,5 +1,5 @@
 use opencv::{
-    core::{Size, Vector, DECOMP_CHOLESKY, DECOMP_LU},
+    core::Size,
     highgui::{destroy_all_windows, imshow, wait_key},
     prelude::*,
     videoio::{
@@ -37,7 +37,7 @@ fn main() -> opencv::Result<()> {
         if !capture.read(&mut image)? {
             break;
         }
-        let inv = inverse(&image, DECOMP_LU)?;
+        let inv = inverse(&image)?;
         out.write(&image)?;
         imshow("frame", &image)?;
         imshow("inv", &inv)?;
@@ -55,15 +55,9 @@ fn ctoi(c: char) -> i8 {
     (c as u8) as i8
 }
 
-fn inverse(src: &Mat, method: i32) -> opencv::Result<Mat> {
-    let mut layers = Vector::<Mat>::new();
-    opencv::core::split(src, &mut layers)?;
-    let layers = layers
-        .iter()
-        .map(|layer| layer.inv(method).unwrap().to_mat().unwrap())
-        .collect::<Vector<Mat>>();
+fn inverse(src: &Mat) -> opencv::Result<Mat> {
+    let mut dst = Mat::default();
+    opencv::core::bitwise_not(&src, &mut dst, &opencv::core::no_array()).unwrap();
 
-    let mut rgb = Mat::default();
-    opencv::core::merge(&layers, &mut rgb)?;
-    Ok(rgb)
+    Ok(dst)
 }
