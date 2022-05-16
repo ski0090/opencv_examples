@@ -17,6 +17,10 @@ name = "info"
 path = "src/info.rs"
 
 [[bin]]
+name = "mask_hsv"
+path = "src/mask_hsv.rs"
+
+[[bin]]
 name = "range"
 path = "src/range.rs"
 
