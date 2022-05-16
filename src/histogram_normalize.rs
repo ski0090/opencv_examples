@@ -16,7 +16,7 @@ fn main() {
 }
 
 fn run() -> opencv::Result<()> {
-    let src = opencv::imgcodecs::imread("lenna.bmp", IMREAD_GRAYSCALE)?;
+    let src = opencv::imgcodecs::imread("resources/lenna.bmp", IMREAD_GRAYSCALE)?;
     let mut dst = Mat::default();
     opencv::core::normalize(
         &src,

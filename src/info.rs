@@ -10,8 +10,8 @@ fn run() -> opencv::Result<()> {
     let window2 = "img2";
     highgui::named_window(window1, WINDOW_AUTOSIZE)?;
     highgui::named_window(window2, WINDOW_AUTOSIZE)?;
-    let mut img1 = opencv::imgcodecs::imread("cat.bmp", IMREAD_UNCHANGED)?;
-    let img2 = opencv::imgcodecs::imread("cat.bmp", IMREAD_GRAYSCALE)?;
+    let mut img1 = opencv::imgcodecs::imread("resources/cat.bmp", IMREAD_UNCHANGED)?;
+    let img2 = opencv::imgcodecs::imread("resources/cat.bmp", IMREAD_GRAYSCALE)?;
     let x = 20;
     let y = 10;
 

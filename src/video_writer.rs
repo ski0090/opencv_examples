@@ -7,7 +7,8 @@ use opencv::{
     },
 };
 const ESCAPE: i32 = 27;
-const SRC_PATH: &'static str = "video1.mp4";
+const SRC_PATH: &'static str = "resources/video1.mp4";
+const OUT_PATH: &'static str = "resources/out.avi";
 
 fn main() -> opencv::Result<()> {
     let mut capture = VideoCapture::from_file(SRC_PATH, 0)?;
@@ -24,7 +25,7 @@ fn main() -> opencv::Result<()> {
     let fourcc = VideoWriter::fourcc(ctoi('D'), ctoi('I'), ctoi('V'), ctoi('X'))?;
     let delay = 1000_f64 / fps.round();
 
-    let mut out = VideoWriter::new("out.avi", fourcc, 30_f64, Size::new(w, h), true)?;
+    let mut out = VideoWriter::new(OUT_PATH, fourcc, 30_f64, Size::new(w, h), true)?;
 
     if !out.is_opened()? {
         capture.release()?;

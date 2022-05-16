@@ -10,9 +10,9 @@ fn run() -> opencv::Result<()> {
     highgui::named_window(window1, WINDOW_AUTOSIZE)?;
     highgui::named_window(window2, WINDOW_AUTOSIZE)?;
     highgui::named_window(window2, WINDOW_AUTOSIZE)?;
-    let src = opencv::imgcodecs::imread("airplane.bmp", IMREAD_COLOR)?;
-    let mut dst = opencv::imgcodecs::imread("field.bmp", IMREAD_COLOR)?;
-    let mask = opencv::imgcodecs::imread("mask_plane.bmp", IMREAD_GRAYSCALE)?;
+    let src = opencv::imgcodecs::imread("resources/airplane.bmp", IMREAD_COLOR)?;
+    let mut dst = opencv::imgcodecs::imread("resources/field.bmp", IMREAD_COLOR)?;
+    let mask = opencv::imgcodecs::imread("resources/mask_plane.bmp", IMREAD_GRAYSCALE)?;
 
     // src, mask, dst is same range.
     // src, dst is same type.

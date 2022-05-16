@@ -13,7 +13,7 @@ fn saturate_scalar() -> opencv::Result<()> {
     let window2 = "saturate";
     highgui::named_window(window1, WINDOW_AUTOSIZE)?;
     highgui::named_window(window2, WINDOW_AUTOSIZE)?;
-    let src1 = opencv::imgcodecs::imread("cat.bmp", IMREAD_UNCHANGED)?;
+    let src1 = opencv::imgcodecs::imread("resources/cat.bmp", IMREAD_UNCHANGED)?;
     let src2 = opencv::core::Scalar::all(55_f64);
     let mut dst = Mat::default();
     opencv::core::add(&src1, &src2, &mut dst, &opencv::core::no_array(), -1)?;

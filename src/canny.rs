@@ -5,7 +5,7 @@ use opencv::{
     videoio::VideoCapture,
 };
 const ESCAPE: i32 = 27;
-const SRC_PATH: &'static str = "video1.mp4";
+const SRC_PATH: &'static str = "resources/video1.mp4";
 
 fn main() -> opencv::Result<()> {
     let mut capture = VideoCapture::from_file(SRC_PATH, 0)?;

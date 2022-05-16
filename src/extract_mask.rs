@@ -13,7 +13,7 @@ fn run() -> opencv::Result<()> {
     highgui::named_window(window1, WINDOW_AUTOSIZE)?;
     highgui::named_window(window2, WINDOW_AUTOSIZE)?;
 
-    let src = opencv::imgcodecs::imread("opencv-logo-white.png", IMREAD_UNCHANGED)?;
+    let src = opencv::imgcodecs::imread("resources/opencv-logo-white.png", IMREAD_UNCHANGED)?;
     let mut layers = Vector::<Mat>::new();
     opencv::core::split(&src, &mut layers)?;
     let mask = layers.get(3)?;
@@ -25,7 +25,7 @@ fn run() -> opencv::Result<()> {
     highgui::imshow(window1, &src)?;
     highgui::imshow(window2, &mask)?;
 
-    let dst = opencv::imgcodecs::imread("field.bmp", IMREAD_COLOR)?;
+    let dst = opencv::imgcodecs::imread("resources/field.bmp", IMREAD_COLOR)?;
     let size = src.size()?;
     let (y, x) = (10, 10);
     let mut crop = Mat::ranges(

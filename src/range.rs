@@ -12,7 +12,7 @@ fn run() -> opencv::Result<()> {
     highgui::named_window(window1, WINDOW_AUTOSIZE)?;
     highgui::named_window(window2, WINDOW_AUTOSIZE)?;
     highgui::named_window(window3, WINDOW_AUTOSIZE)?;
-    let img1 = opencv::imgcodecs::imread("cat.bmp", IMREAD_UNCHANGED)?;
+    let img1 = opencv::imgcodecs::imread("resources/cat.bmp", IMREAD_UNCHANGED)?;
 
     let range_row = Range::new(40, 120)?;
     let range_col = Range::new(30, 150)?;

@@ -16,7 +16,7 @@ fn main() {
 }
 
 fn run() -> opencv::Result<()> {
-    let src = opencv::imgcodecs::imread("field.bmp", IMREAD_COLOR)?;
+    let src = opencv::imgcodecs::imread("resources/field.bmp", IMREAD_COLOR)?;
     let mut src_ycrcb = Mat::default();
     opencv::imgproc::cvt_color(&src, &mut src_ycrcb, COLOR_BGR2YCrCb, 0)?;
     let mut plains: Vector<Mat> = Vector::new();

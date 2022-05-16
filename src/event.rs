@@ -14,7 +14,7 @@ fn main() -> opencv::Result<()> {
     Ok(())
 }
 
-fn on_mouse(event: i32, x: i32, y: i32, param: i32) {
+fn on_mouse(event: i32, x: i32, y: i32, _: i32) {
     if event == EVENT_LBUTTONDOWN {
         dbg!(x, y);
     }
