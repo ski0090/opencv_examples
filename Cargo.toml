@@ -7,14 +7,15 @@ edition = "2021"
 
 [dependencies]
 opencv = {version = "0.63", features = ["highgui", "imgcodecs", "videoio"]}
+cw = {package = "custom-wrapper", path = "./custom-wrapper"}
+
+[[bin]]
+name = "back_proj"
+path = "src/back_projection.rs"
 
 [[bin]]
 name = "saturate"
 path = "src/saturate.rs"
-
-[[bin]]
-name = "info"
-path = "src/info.rs"
 
 [[bin]]
 name = "mask_hsv"

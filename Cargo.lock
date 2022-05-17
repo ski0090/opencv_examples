@@ -47,6 +47,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "custom-wrapper"
+version = "0.1.0"
+dependencies = [
+ "opencv",
+]
+
+[[package]]
 name = "dunce"
 version = "1.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -140,6 +147,7 @@ dependencies = [
 name = "opencv_rs"
 version = "0.1.0"
 dependencies = [
+ "custom-wrapper",
  "opencv",
 ]
 

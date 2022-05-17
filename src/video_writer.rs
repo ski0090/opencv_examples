@@ -1,3 +1,4 @@
+use cw::*;
 use opencv::{
     core::Size,
     highgui::{destroy_all_windows, imshow, wait_key},
@@ -50,15 +51,4 @@ fn main() -> opencv::Result<()> {
     capture.release()?;
     destroy_all_windows()?;
     Ok(())
-}
-
-fn ctoi(c: char) -> i8 {
-    (c as u8) as i8
-}
-
-fn inverse(src: &Mat) -> opencv::Result<Mat> {
-    let mut dst = Mat::default();
-    opencv::core::bitwise_not(&src, &mut dst, &opencv::core::no_array()).unwrap();
-
-    Ok(dst)
 }
